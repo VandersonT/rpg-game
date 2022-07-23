@@ -11,8 +11,25 @@ const App = () => {
     window.addEventListener('keydown', handleKeyDown);
   },[])
 
-  const handleKeyDown = () => {
-    console.log('apertou')
+  const handleKeyDown = (e:KeyboardEvent) => {
+    switch(e.code){
+      case 'KeyA':
+      case 'ArrowLeft':
+        char.moveLeft();
+        break;
+      case 'KeyW':
+      case 'ArrowUp':
+          char.moveTop();
+          break;
+      case 'KeyD':
+      case 'ArrowRight':
+          char.moveRight();
+          break;
+      case 'KeyS':
+      case 'ArrowDown':
+          char.moveDown();
+          break;
+    }
   }
 
   return (
