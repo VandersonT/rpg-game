@@ -6,7 +6,7 @@ export const useCharacter = () => {
 
     const [pos, setPos] = useState({x: 3, y: 5});
     const [side, setSide] = useState<CharacterSides>('down');
-    const speed = 1;
+    const speed = .1;
 
     const moveLeft = () => {
         setPos(pos => ({
