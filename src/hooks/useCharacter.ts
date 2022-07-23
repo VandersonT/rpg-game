@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { CharacterSides } from '../types/CharacterSides';
 
 export const useCharacter = () => {
 
     const [pos, setPos] = useState({x: 3, y: 5});
+    const [side, setSide] = useState<CharacterSides>('down');
     const speed = .2;
 
     const moveLeft = () => {
@@ -10,6 +12,7 @@ export const useCharacter = () => {
             x: pos.x - speed,
             y: pos.y
         }));
+        setSide('left');
     }
 
     const moveRight = () => {
@@ -17,6 +20,7 @@ export const useCharacter = () => {
             x: pos.x + speed,
             y: pos.y
         }));
+        setSide('right');
     }
 
     const moveDown = () => {
@@ -24,6 +28,7 @@ export const useCharacter = () => {
             x: pos.x,
             y: pos.y + speed
         }));
+        setSide('down');
     }
 
     const moveTop = () => {
@@ -31,6 +36,7 @@ export const useCharacter = () => {
             x: pos.x,
             y: pos.y - speed
         }));
+        setSide('up');
     }
 
     return {
@@ -39,7 +45,8 @@ export const useCharacter = () => {
         moveLeft,
         moveRight,
         moveDown,
-        moveTop
+        moveTop,
+        side
     };
 
 }
