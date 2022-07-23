@@ -19,7 +19,7 @@ const App = () => {
         break;
       case 'KeyW':
       case 'ArrowUp':
-          char.moveTop();
+          char.moveUp();
           break;
       case 'KeyD':
       case 'ArrowRight':
